@@ -1,11 +1,6 @@
 Matt's Funtoo Overlay
 =====================
 
-| -------------:|:------------------- |
-| **Author:**   | Matt LaChance       |
-| **Contact:**  | mattlach@umich.edu  |
-| **Language:** | English             |
-
 I use this to hold any programs I make, so that they're easy for me to
 install on my own system. I have a hard time imagining anyone other than
 myself actually wanting to use this, but hey, if that's you, awesome!
