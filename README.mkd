@@ -1,0 +1,35 @@
+Matt's Funtoo Overlay
+=====================
+
+| -------------:|:------------------- |
+| **Author:**   | Matt LaChance       |
+| **Contact:**  | mattlach@umich.edu  |
+| **Language:** | English             |
+
+I use this to hold any programs I make, so that they're easy for me to
+install on my own system. I have a hard time imagining anyone other than
+myself actually wanting to use this, but hey, if that's you, awesome!
+
+Installation
+------------
+
+If this is your first time ever adding a funtoo (or gentoo) overlay,
+then, well, you should totally read up on those. But if you don't want
+to think about any of that right now, here's an easy how-to:
+
+Create a new file called `/etc/portage/repos.conf/matts-funtoo-overlay`:
+
+```ini
+[matts-funtoo-overlay]
+location  = /usr/local/overlay/matts-funtoo-overlay
+sync-type = git
+sync-uri  = git://github.com/daaang/matts-funtoo-overlay.git
+auto-sync = yes
+```
+
+Or, if `/etc/portage/repos.conf` is a file instead of a directory, then
+you can just add those lines to it. Feel free to change the location to
+wherever you prefer if you don't like mine.
+
+All that's left is to run `emerge --sync`, and this will be pulled in
+with everything else!
