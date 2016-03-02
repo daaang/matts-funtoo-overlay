@@ -28,3 +28,8 @@ wherever you prefer if you don't like mine.
 
 All that's left is to run `emerge --sync`, and this will be pulled in
 with everything else!
+
+Current Packages
+----------------
+
+-   [chexdump](https://github.com/daaang/chexdump)
