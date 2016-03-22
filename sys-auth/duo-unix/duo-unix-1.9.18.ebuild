@@ -14,12 +14,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-libs/openssl virtual/pam sys-libs/zlib"
+DEPEND="dev-libs/openssl virtual/pam sys-libs/zlib
+	sys-devel/autoconf-wrapper"
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	aclocal && autoheader && automake && autoconf \
-		&& econf --with-pam
+	autoreconf -vfi -I autotools && econf --with-pam
 }
 
 src_install() {
