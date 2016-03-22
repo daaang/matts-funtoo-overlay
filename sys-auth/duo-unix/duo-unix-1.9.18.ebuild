@@ -18,11 +18,15 @@ DEPEND="dev-libs/openssl virtual/pam sys-libs/zlib
 	sys-devel/autoconf-wrapper"
 RDEPEND="${DEPEND}"
 
-src_configure() {
-	if ! cd "$S"; then
-		die "couldn't enter working directory"
-	fi
+src_unpack() {
+	unpack ${A}
 
+	if ! [ -d "$S" ]; then
+		mv "${WORKDIR}/${PNU}-${PNU}-${PV}" "$S"
+	fi
+}
+
+src_configure() {
 	if ! autoreconf -vfi -I autotools; then
 		die "coundn't generate ./configure"
 	fi
