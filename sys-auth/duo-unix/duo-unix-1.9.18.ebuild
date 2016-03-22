@@ -18,7 +18,8 @@ DEPEND="dev-libs/openssl virtual/pam sys-libs/zlib"
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	econf --with-pam
+	aclocal && autoheader && automake && autoconf \
+		&& econf --with-pam
 }
 
 src_install() {
