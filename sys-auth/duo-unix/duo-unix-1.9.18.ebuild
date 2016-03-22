@@ -19,11 +19,19 @@ DEPEND="dev-libs/openssl virtual/pam sys-libs/zlib
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	autoreconf -vfi -I autotools && econf --with-pam
+	if ! cd "$S"; then
+		die "couldn't enter working directory"
+	fi
+
+	if ! autoreconf -vfi -I autotools; then
+		die "coundn't generate ./configure"
+	fi
+
+	if ! econf --with-pam; then
+		die "configuration failed"
+	fi
 }
 
 src_install() {
 	emake DESTDIR="$D" install
-
-	dodoc AUTHORS CHANGES README
 }
