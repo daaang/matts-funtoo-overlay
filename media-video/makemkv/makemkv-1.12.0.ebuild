@@ -87,6 +87,9 @@ src_install() {
 	fi
 
 	# install profiles and locales
+	pushd src/share
+	tar -xf *.tar
+	popd
 	insinto /usr/share/MakeMKV
 	doins src/share/*.{mo.gz,xml}
 }
